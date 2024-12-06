@@ -23,13 +23,12 @@ const crearDeck = () => {
 
 }
 
-crearDeck();
-
 // Pedir carta
 const pedirCarta = () => {
-
+    
     return deck.pop()
     
 }
 
+crearDeck();
 pedirCarta();
