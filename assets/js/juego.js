@@ -5,14 +5,14 @@ const especiales = ['A', 'J', 'Q', 'K'];
 
 const crearDeck = () => {
 
-    for( let i = 2; i<=10; i++ ){
-        for( let tipo of tipos ){
+    for (let i = 2; i <= 10; i++) {
+        for (let tipo of tipos) {
             deck.push(i + tipo)
         }
     }
 
-    for( let tipo of tipos ){
-        for( let esp of especiales ){
+    for (let tipo of tipos) {
+        for (let esp of especiales) {
             deck.push(esp + tipo)
         }
     }
@@ -24,11 +24,16 @@ const crearDeck = () => {
 }
 
 // Pedir carta
-const pedirCarta = () => {
-    
-    return deck.pop()
-    
+const pedirCarta = () => { return deck.pop() }
+
+const valorCarta = (carta) => {
+
+    const valor = carta.substring(0, carta.length - 1)
+
+    return (!isNaN(valor)) ? (valor * 1) :
+        (valor === 'A') ? 11 : 10
+
 }
 
 crearDeck();
-pedirCarta();
+console.log(valorCarta(pedirCarta()));
